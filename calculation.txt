@@ -1,0 +1,69 @@
+/*
+Taylor Mashburn
+CS 120, Section 05
+Proffessor Bolden
+September 8, 2017
+ */
+
+/* Calculation Program
+
+Assignment #2 is complete including extra credit
+
+in the CALCULATION AND OUTPUT section under the division if statement there is a second if
+statement to confirm that the second number the user inputed is not 0. If it is zero then
+the program reads "ERROR: divide by 0"
+
+ */
+#include<iostream>
+using namespace std; 
+
+int main() // Start of main
+{
+  //---VARIABLE DECLARATIONS---
+  double num1;
+  double num2;
+  int operation;
+  double output;
+
+  //---USER INPUT COLLECTION---
+  cout << "\t\t-CALCULATION PROGRAM-" << endl << "Enter an Integer" << endl;
+  cin >> num1;
+  cout << "Enter 1 for addtion, 2 for subtraction, 3 for multiplication, 4 for division" << endl; 
+  cin >> operation;
+  cout << "Enter a second Integer" << endl;
+  cin >> num2;
+
+  //---CALCULATION AND OUTPUT---
+  if(operation == 1) // addition
+    {
+      output = num1+num2;
+      cout << num1 << " + " << num2 << " = " << output << endl;
+    }
+  if (operation == 2) // subtraction
+    { 
+      output = num1-num2;
+      cout << num1 << " - " << num2 << " = " << output << endl;
+    }
+  if (operation == 3) // multiplication
+    {
+      output = num1 * num2;
+      cout << num1 << " * " << num2 << " = " << output << endl;
+    }
+  if(operation == 4) // division
+    {
+      if (num2 == 0)
+	{
+	cout << "ERROR: divide by 0" << endl;
+	}
+      else 
+	{
+	  output = num1/num2;
+          cout << num1 << " / " << num2 << " = " << output << endl;
+	}
+    }
+
+  cin.ignore();
+  cout << "Press enter to quit" << endl;
+  cin.ignore();
+  return 0;
+} //end of main
